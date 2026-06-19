@@ -176,6 +176,6 @@ consola = tk.Text(
 consola.pack(pady=10)
 
 consola.insert(tk.END, "> Consola lista amigo supremo.\n")
-consola.insert(tk.END, f"> Los MP3 descargados se guardarán en la carpeta: {CARPETA_DESCARGAS}\n")
+consola.insert(tk.END, f"> Los MP3333 descargados se guardarán en la carpeta: {CARPETA_DESCARGAS}\n")
 
 ventana.mainloop()
