@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import yt_dlp
+import webbrowser
 
 
 CARPETA_DESCARGAS = "descargas_mp3"
@@ -148,8 +149,11 @@ entrada_url = tk.Entry(
 entrada_url.pack(pady=(57, 8))
 
 
+frame_botones = tk.Frame(ventana, bg="#101010")
+frame_botones.pack(pady=8)
+
 boton_descargar = tk.Button(
-    ventana,
+    frame_botones,
     text="DESCARGAR MP3",
     command=descargar_audio,
     bg="#00aa66",
@@ -161,7 +165,22 @@ boton_descargar = tk.Button(
     padx=12,
     pady=8
 )
-boton_descargar.pack(pady=8)
+boton_descargar.pack(side=tk.LEFT, padx=(0, 10))
+
+boton_vocal = tk.Button(
+    frame_botones,
+    text="VOCAL REMOVER",
+    command=lambda: webbrowser.open("https://vocalremover.org/"),
+    bg="#aa6600",
+    fg="#ffffff",
+    activebackground="#885500",
+    activeforeground="#ffffff",
+    font=("Consolas", 11, "bold"),
+    relief=tk.FLAT,
+    padx=12,
+    pady=8
+)
+boton_vocal.pack(side=tk.LEFT)
 
 consola = tk.Text(
     ventana,
